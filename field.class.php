@@ -65,5 +65,21 @@ class data_field_linkedradiobutton extends data_field_radiobutton {
         return get_string('name' . $this->type, 'datafield_' . $this->type);
     }
 
+    /**
+     * Prints the respective type icon
+     *
+     * @global object
+     * @return string
+     */
+    function image() {
+        global $OUTPUT;
+
+        $params = array('d' => $this->data->id, 'fid' => $this->field->id, 'mode' => 'display', 'sesskey' => sesskey());
+        $link = new moodle_url('/mod/data/field.php', $params);
+        $str = '<a href="' . $link->out() . '">';
+        $str .= '<img src="' . $OUTPUT->pix_url('linkedradiobutton', 'datafield_linkedradiobutton') . '" ';
+        $str .= 'height="' . $this->iconheight . '" width="' . $this->iconwidth . '" alt="' . $this->type . '" title="' . $this->type . '" /></a>';
+        return $str;
+    }
 }
 
