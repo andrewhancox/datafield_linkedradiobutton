@@ -22,5 +22,5 @@
  */
 
 $string['pluginname'] = 'Linked Radio Button';
-$string['namelinkedradiobutton'] = 'Linked Radio Button field';
+$string['fieldtypelabel'] = 'Linked Radio Button field';
 $string['migrate'] = 'Migrate radio button fields to linked radio buttons';
